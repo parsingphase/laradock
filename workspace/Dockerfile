@@ -962,6 +962,20 @@ RUN if [ ${INSTALL_ANT} = true ]; then \
 ;fi
 
 ###########################################################################
+# AWS tools: (possibly exceeds authority with pip3 dependency install)
+###########################################################################
+
+USER root
+
+ARG INSTALL_AWS_TOOLS=false
+
+RUN if [ ${INSTALL_AWS_TOOLS} = true ]; then \
+    apt-get update -yqq && \
+    apt-get -y install python3-pip && \
+    pip3 install awscli aws-sam-cli \
+;fi
+
+###########################################################################
 # Check PHP version:
 ###########################################################################
 
