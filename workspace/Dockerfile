@@ -100,6 +100,7 @@ RUN sed -i 's/\r//' /root/aliases.sh && \
     echo "" >> ~/.bashrc && \
     echo "# Load Custom Aliases" >> ~/.bashrc && \
     echo "source ~/aliases.sh" >> ~/.bashrc && \
+	echo "export COMPOSER_ALLOW_SUPERUSER=1" >> ~/.bashrc && \
 	  echo "" >> ~/.bashrc
 
 USER laradock
