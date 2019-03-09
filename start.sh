@@ -8,7 +8,7 @@ if [[ ! -f "${DIR}/.env" ]]; then
     cp "${DIR}/env-example" "${DIR}/.env"
 fi
 
-docker-compose up -d nginx php-fpm workspace
+docker-compose up -d nginx php-fpm workspace mysql
 
 echo
 echo "Run 'docker-compose exec workspace bash' to enter workspace"
